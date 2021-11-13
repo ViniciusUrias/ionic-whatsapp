@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img src="{{message.photo}}" alt="" />
+    </ion-avatar>
+    <ion-label>{{message.firstName}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <div class="container">
+    <div
+      class="baloon-general baloon-received received-anchor"
+      style="color: white"
+    >
+      <p style="margin: '8px 8px 32px'; word-break: break-word">
+        {{message.message}}
+      </p>
+      <p>{{message.hour}}</p>
+    </div>
+    <div class="baloon-general baloon-chat anchor" style="color: white">
+      <p style="margin: '8px 8px 32px'; word-break: break-word">
+        {{message.message}}
+      </p>
+      <p>{{message.hour}}</p>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer1">
+    <ion-button class="btn" size="small" slot="icon-only">
+      <ion-icon name="happy-outline"></ion-icon>
+    </ion-button>
+    <ion-input placeholder="Mensagem"></ion-input>
+    <ion-buttons>
+      <ion-icon name="attach-outline"></ion-icon>
+      <ion-icon name="camera"></ion-icon>
+    </ion-buttons>
+  </div>
+  <ion-button class="btn1" size="small" class="mic" color="secondary">
+    <ion-icon name="mic-outline"></ion-icon>
+  </ion-button>
+</ion-footer>

@@ -11,6 +11,19 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'private-message',
+    loadChildren: () => import('./private-message/private-message.module').then( m => m.PrivateMessagePageModule)
+  },
+  {
+    path: 'status',
+    loadChildren: () => import('./status/status.module').then( m => m.StatusPageModule)
+  },
+  {
+    path: 'chamadas',
+    loadChildren: () => import('./chamadas/chamadas.module').then( m => m.ChamadasPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -1,0 +1,118 @@
+// body{
+//   background-image: url('../../assets/message-background.png');
+//   background-repeat: no-repeat;
+//   background-color: white;
+//   background-size: cover;
+// }
+ion-content{
+  --background: linear-gradient(0,0,255,0.4), url('../../assets/message-background.png')  no-repeat cover ;
+
+}
+
+.content{
+  background:linear-gradient(rgba(13, 20, 24, 0.9), rgba(13, 20, 24, 0.9)),  url('../../assets/message-background.png');
+  background-repeat: repeat;
+  background-size: cover;
+  background-size: 412.5px 749.25px;
+}
+
+ion-avatar{
+  width: 2rem;
+  position: relative;
+  left: -5px;
+  height: 2rem;
+  border-radius: 100%;
+}
+.toolbar{
+  display: flex;
+  align-items: center;
+
+}
+
+ion-footer{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.footer1{
+  display: flex;
+  width: 80%;
+}
+
+
+
+
+ion-input{
+  width: 230px;
+}
+
+.btn{
+  font-size: 9px;
+  height: auto;
+}
+
+.btn1{
+  margin-right: 20px;
+}
+
+.container{
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.baloon-general{
+  max-width: 60%;
+  min-width: 160px;
+  border-radius: 4px;
+  position: relative;
+}
+.baloon-received{
+  background: #2EE986;
+  align-self: flex-end;
+  border-top-right-radius: 0px;
+  color: #262A33;
+}
+
+.baloon-chat{
+  background: var(--ion-color-primary);
+  color: 'white';
+  align-self: flex-start;
+  border-top-left-radius: 0px;
+}
+
+.recievedAnchor{
+  border-top-left-radius: 4px !important;
+  ::before {
+    content: attr(placeholder);
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    right: -10px;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #2EE986
+  }
+};
+
+.anchor {
+  border-top-right-radius: 4px !important;
+  ::before {
+    content: attr(i);
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    left: -10px;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #262A33
+  }
+};
