@@ -83,7 +83,7 @@ ion-input{
 }
 
 .baloon-chat{
-  background: var(--ion-color-primary);
+  background: var(--ion-color-tertiary);
   color: 'white';
   align-self: flex-start;
   border-top-left-radius: 0px;
@@ -91,7 +91,7 @@ ion-input{
 
 .recievedAnchor{
   border-top-left-radius: 4px !important;
-  ::before {
+  &::before{
     content: attr(placeholder);
     position: absolute;
     width: 0px;
@@ -105,7 +105,7 @@ ion-input{
 
 .anchor {
   border-top-right-radius: 4px !important;
-  ::before {
+  &::before {
     content: attr(i);
     position: absolute;
     width: 0px;
@@ -113,6 +113,15 @@ ion-input{
     background: transparent;
     left: -10px;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid #262A33
+    border-right: 10px solid var(--ion-color-tertiary)
   }
+};
+
+.date {
+  bottom: 8px;
+  margin: 0;
+  right: 8px;
+  font-size: 12px;
+  position: absolute;
+  color: #BFBFBF
 };

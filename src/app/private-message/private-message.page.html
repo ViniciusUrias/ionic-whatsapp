@@ -13,19 +13,19 @@
 <ion-content class="content">
   <div class="container">
     <div
-      class="baloon-general baloon-received received-anchor"
+      class="baloon-general baloon-received recievedAnchor"
       style="color: white"
     >
       <p style="margin: '8px 8px 32px'; word-break: break-word">
         {{message.message}}
       </p>
-      <p>{{message.hour}}</p>
+      <p class="date" style="color: black">{{message.hour}}</p>
     </div>
     <div class="baloon-general baloon-chat anchor" style="color: white">
       <p style="margin: '8px 8px 32px'; word-break: break-word">
         {{message.message}}
       </p>
-      <p>{{message.hour}}</p>
+      <p class="date">{{message.hour}}</p>
     </div>
   </div>
 </ion-content>
