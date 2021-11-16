@@ -39,6 +39,9 @@ ion-footer{
 .footer1{
   display: flex;
   width: 80%;
+  border: 1px solid var(--ion-color-tertiary);
+  border-radius: 120px;
+  padding: 0px 12px;
 }
 
 
@@ -51,6 +54,8 @@ ion-input{
 .btn{
   font-size: 9px;
   height: auto;
+  --background: transparent;
+
 }
 
 .btn1{
@@ -76,14 +81,14 @@ ion-input{
   position: relative;
 }
 .baloon-received{
-  background: #2EE986;
+  background: var(--ion-color-tertiary);
   align-self: flex-end;
   border-top-right-radius: 0px;
   color: #262A33;
 }
 
 .baloon-chat{
-  background: var(--ion-color-tertiary);
+  background: var(--ion-color-medium);
   color: 'white';
   align-self: flex-start;
   border-top-left-radius: 0px;
@@ -99,7 +104,7 @@ ion-input{
     background: transparent;
     right: -10px;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid #2EE986
+    border-left: 10px solid var(--ion-color-tertiary)
   }
 };
 
@@ -113,7 +118,7 @@ ion-input{
     background: transparent;
     left: -10px;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid var(--ion-color-tertiary)
+    border-right: 10px solid var(--ion-color-medium)
   }
 };
 
@@ -123,5 +128,10 @@ ion-input{
   right: 8px;
   font-size: 12px;
   position: absolute;
-  color: #BFBFBF
+  color: var(--ion-color-light)
 };
+
+.footer2{
+  background:linear-gradient(rgba(13, 20, 24, 0.8), rgba(13, 20, 24, 0.9)),  url('../../assets/message-background.png');
+
+}

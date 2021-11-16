@@ -1,14 +1,43 @@
 /* eslint-disable max-len */
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PopoverController } from '@ionic/angular';
 import { PrivateMessagesService } from '../services/privateMessages.service';
-
+import { PopoverComponent } from '../components/popover/popover.component';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+ public isSearch = false;
+ public chips: Chips[]=[
+{
+  name:'image',
+  label: 'Fotos'
+},
+{
+  name: 'videocam',
+  label: 'Vídeos'
+},
+{
+  name: 'link',
+  label: 'Links'
+},
+{
+  name: 'barcode',
+  label: 'GIFs',
+},
+{
+  name: 'headset',
+  label: 'Áudio'
+},
+{
+  name: 'document-text',
+  label: 'Documentos'
+}
+ ];
+
 
   public users: Person[] = [
     {
@@ -425,10 +454,15 @@ export class HomePage {
   selectedTabs = 'home';
   constructor(
     public privateMessagesService: PrivateMessagesService,
-    public router: Router
+    public router: Router,
+    private popOverCtrl: PopoverController
   ) {}
 
 
+
+  handleSearch(){
+    this.isSearch = !this.isSearch;
+  }
 
 segmentChanged(e: any){
   console.log(e.target.value);
@@ -439,6 +473,19 @@ segmentChanged(e: any){
     this.privateMessagesService.guardarDados('id', user);
     this.router.navigateByUrl('private-message');
   }
+
+  async tooglePopOver(ev: any) {
+    const popOver = await this.popOverCtrl.create({
+      component: PopoverComponent,
+      cssClass: 'my-popover-class',
+      event: ev,
+    });
+
+    popOver.onDidDismiss().then(data=> console.log(data));
+
+    return await popOver.present();
+  }
+
 }
 
 export type Person = {
@@ -447,4 +494,9 @@ export type Person = {
   photo: string;
   message: string;
   hour: string;
+};
+
+export type Chips = {
+  name: string;
+  label: string;
 };

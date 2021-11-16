@@ -3,8 +3,39 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>chamadas</ion-title>
+    <ion-title>Chamadas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-text color="light">
+    <p class="ion-margin">Atualizações recentes</p>
+  </ion-text>
+
+  <div class="myStatus" *ngFor="let item of status">
+    <ion-avatar style="height: auto">
+      <img src="{{item.photo}}" />
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="light">
+        <p style="font-weight: bold; font-size: 16px">{{item.firstName}}</p>
+      </ion-text>
+
+      <p style="font-size: 14px; display: flex; align-items: center">
+        <ion-icon
+          *ngIf="item.id % 2 === 0"
+          color="secondary"
+          class="arrow"
+          name="arrow-forward-outline"
+        ></ion-icon
+        ><ion-icon
+          *ngIf="item.id % 2 !== 0"
+          color="danger"
+          class="arrowDown"
+          name="arrow-forward-outline"
+        ></ion-icon
+        >Hoje as {{item.hour}}
+      </p>
+    </ion-label>
+  </div>
+</ion-content>

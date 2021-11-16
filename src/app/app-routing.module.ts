@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'chamadas',
     loadChildren: () => import('./chamadas/chamadas.module').then( m => m.ChamadasPageModule)
   },
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
+  },
 
 ];
 

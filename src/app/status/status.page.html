@@ -3,8 +3,40 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>status</ion-title>
+    <ion-title>Status</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <div class="myStatus">
+    <ion-avatar>
+      <img
+        src="https://robohash.org/magniofficiisqui.png?size=50x50&set=set1"
+      />
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="light">
+        <p style="font-weight: bold; font-size: 16px">Meu status</p>
+      </ion-text>
+
+      <p style="font-size: 14px">Toque para atualizar seu status</p>
+    </ion-label>
+  </div>
+
+  <ion-text color="light">
+    <p class="ion-margin">Atualizações recentes</p>
+  </ion-text>
+
+  <div class="myStatus" *ngFor="let item of status">
+    <ion-avatar style="height: auto">
+      <img src="{{item.photo}}" />
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="light">
+        <p style="font-weight: bold; font-size: 16px">{{item.firstName}}</p>
+      </ion-text>
+
+      <p style="font-size: 14px">Hoje as {{item.hour}}</p>
+    </ion-label>
+  </div>
+</ion-content>
